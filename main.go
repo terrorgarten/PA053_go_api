@@ -19,7 +19,7 @@ func main() {
 		os.Exit(1)
 	}
 	if config.Port == "" {
-		config.Port = "16443"
+		config.Port = "3000"
 	}
 
 	app := fiber.New()
