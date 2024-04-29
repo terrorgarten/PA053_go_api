@@ -1,0 +1,24 @@
+### Test Eval API with properly encoded expression
+@encodedExpression = 1%2B1
+GET http://localhost:8080/api?queryEval={{encodedExpression}}
+Content-Type: application/json
+
+### Test Eval API with non-encoded expression (this should fail if not handled)
+GET http://localhost:8080/api?queryEval=1+1
+Content-Type: application/json
+
+### Test Eval API with subtraction
+GET http://localhost:8080/api?queryEval=1-1
+Content-Type: application/json
+
+### Test Eval API with multiplication
+GET http://localhost:8080/api?queryEval=1*2
+Content-Type: application/json
+
+### Test Eval API with division
+GET http://localhost:8080/api?queryEval=10/2
+Content-Type: application/json
+
+### Test Eval API with a complex expression
+GET http://localhost:8080/api?queryEval=(1+2)*3-4/2
+Content-Type: application/json
